@@ -13,10 +13,15 @@ más favicons e íconos de app listos para usar.
 | `logo/` | `partii-logo-square-{1024,512}.png` | Logo completo en lienzo cuadrado (negro o transparente) |
 | `icon/` | `partii-icon-{1024,512,256,128,64}.png` | Ícono de la app (la "P" con el control) sobre negro |
 | `icon/` | `partii-icon-transparent-…png` | Ícono de la app con fondo transparente |
-| `favicon/` | `favicon.ico` (16/32/48/64), `favicon-16x16.png`, `favicon-32x32.png`, `favicon-48x48.png` | Favicon del sitio |
+| `favicon/` | `favicon.svg`, `favicon.ico` (16/32/48/64), `favicon-16x16.png`, `favicon-32x32.png`, `favicon-48x48.png` | Favicon del sitio |
 | `favicon/` | `apple-touch-icon.png` (180), `android-chrome-192x192.png`, `android-chrome-512x512.png`, `maskable-icon-512x512.png`, `mstile-150x150.png`, `site.webmanifest` | iOS, Android / PWA, Windows |
 | `social/` | `og-image-1200x630.png`, `twitter-header-1500x500.png`, `banner-1920x1080.png`, `profile-400x400.png` | Redes sociales y vista previa de enlaces |
+| `svg/` | `partii-logo.svg`, `partii-logo-dark-bg.svg`, `partii-logo-light-bg.svg`, `partii-icon.svg`, `partii-icon-dark-bg.svg` | **Versión vectorial**: se escala a cualquier tamaño sin perder calidad (impresión, cartelería, merch) |
 | `source/` | `partii-original-384x256.png` | Imagen original |
+
+Los SVG son un redibujo vectorial del logo: las formas se trazaron a partir de la imagen y los
+degradados se tomaron de sus colores. Para exportar un PNG de cualquier tamaño desde un SVG:
+`rsvg-convert -w 4096 svg/partii-logo.svg -o partii-logo-4096.png` (o ábrelo en Figma, Illustrator o Inkscape).
 
 Para App Store / Google Play usa `icon/partii-icon-1024.png` (las tiendas exigen fondo opaco).
 
@@ -27,6 +32,7 @@ y agrega esto dentro de `<head>`:
 
 ```html
 <link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
